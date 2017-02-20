@@ -1,0 +1,6 @@
+# Config by Anselm
+# Version 1.0
+
+
+#Use {player} and {message} to get the player name and the event message!:)
+Prefix: '[&4Essentials&f] + player.getName() + " " + event.getMessage()'

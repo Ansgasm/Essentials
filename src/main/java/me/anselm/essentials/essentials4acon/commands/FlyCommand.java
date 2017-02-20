@@ -57,7 +57,7 @@ public class FlyCommand extends Command{
                         Main.flying.add(player);
                     }
                     }else{
-                        player.sendMessage(Main.prefix + "Please change your gamemode in §4Survival §for in §4Adventure§f!");
+                        player.sendMessage(Main.prefix + "Please change your gamemode in §4Survival §for §4Adventure§f!");
                     }
                 }else{
 

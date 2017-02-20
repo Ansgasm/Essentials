@@ -1,17 +1,17 @@
 package me.anselm.essentials.essentials4acon;
 
-import me.anselm.essentials.essentials4acon.commands.FlyCommand;
-import me.anselm.essentials.essentials4acon.commands.FlySpeedCommand;
-import me.anselm.essentials.essentials4acon.commands.GmCommand;
+import me.anselm.essentials.essentials4acon.commands.*;
 import me.anselm.essentials.essentials4acon.listeners.FallDamageListener;
+import me.anselm.essentials.essentials4acon.listeners.PlayerChatListener;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
-import org.bukkit.craftbukkit.v1_8_R3.CraftServer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+
+
 
 /**
  * Created by Anselm on 19.02.2017.
@@ -24,23 +24,39 @@ public class Main extends JavaPlugin{
 
     private CommandMap commandMap;
 
+    public static boolean ad = false ;
+
     private static Main instance;
 
     public static ArrayList<Player>flying = new ArrayList<>();
+
+
+
+
 
 
     //Enabling
     public void onEnable() {
         instance = this;
 
+
+
         registerCommandMap();
         registerEVNT();
+        registerConfig();
 
         commandMap.register("gm", new GmCommand());
         commandMap.register("fly", new FlyCommand());
         commandMap.register( "flyspeed", new FlySpeedCommand());
+        commandMap.register("broadcast", new BroadcastCommand());
+        commandMap.register("ad", new AdCommand());
+
+
 
         this.getLogger().warning(prefix + "Essentials was started succesfully!");
+
+
+
     }
 
 
@@ -75,5 +91,12 @@ public class Main extends JavaPlugin{
     //Registering Listeners
     public void registerEVNT() {
         this.getServer().getPluginManager().registerEvents( new FallDamageListener(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerChatListener(), this);
+    }
+
+
+    public void registerConfig() {
+        getConfig().options().copyDefaults(true);
+        saveConfig();
     }
 }
