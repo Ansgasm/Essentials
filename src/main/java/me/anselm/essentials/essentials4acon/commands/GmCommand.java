@@ -18,8 +18,8 @@ public class GmCommand extends Command{
     public GmCommand() {
         super(
                 "gm",
-                "Ändert den Gamemode eines Spielers!",
-                "/gm 0/1/2/3",
+                "Changes the gamemode of a player",
+                "/gm <gamemode> <player>",
                 new ArrayList<String>()
 
         );
@@ -44,7 +44,7 @@ public class GmCommand extends Command{
                         if (player.getGameMode().equals(GameMode.SURVIVAL)) {
 
                             //If the sender is in Survivalmode
-                            player.sendMessage(Main.prefix + "You are in §4Survivamode §falready!");
+                            player.sendMessage(Main.prefix + "You are in §4Survivalmode §falready!");
                         } else {
 
                             player.setGameMode(GameMode.SURVIVAL);
