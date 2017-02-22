@@ -38,7 +38,7 @@ public class FlySpeedCommand extends Command{
 
 
 
-
+                    //test
 
 
                     //Letting the player reset his flyspeed to vanilla

@@ -66,7 +66,7 @@ public class Main extends JavaPlugin{
     //Disabling
     public void onDisable() {
         instance = null;
-        this.getLogger().warning(prefix + "Essentials was stopped!");
+        this.getLogger().warning(prefix +  "Essentials was stopped!");
     }
 
 
