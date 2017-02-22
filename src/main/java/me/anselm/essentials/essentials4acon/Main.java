@@ -50,6 +50,7 @@ public class Main extends JavaPlugin{
         commandMap.register( "flyspeed", new FlySpeedCommand());
         commandMap.register("broadcast", new BroadcastCommand());
         commandMap.register("ad", new AdCommand());
+        commandMap.register("msg", new MsgCommand());
 
 
 
